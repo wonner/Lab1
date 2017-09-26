@@ -481,7 +481,7 @@ public class Graph {
 			else return nextVerNum;
 		}
 	}
-	
+	// git test1
 	public void showRandomWalk(int cnt)
 	{
 		GraphViz g =new GraphViz("D://temp/"+fName+"/rPath", "F://files/release//bin//dot.exe");

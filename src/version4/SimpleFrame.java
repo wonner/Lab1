@@ -41,7 +41,7 @@ public class SimpleFrame extends JFrame {
 		int screenHeight=screenSize.height;
 		int screenWidth = screenSize.width;
 		
-		
+		//git test3
 		//设置框架长宽及位置
 		//add(new ImageComponent());
 		setSize(screenWidth/2,screenHeight/2);
