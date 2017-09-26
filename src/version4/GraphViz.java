@@ -15,7 +15,7 @@ class  GraphViz{
     private StringBuilder graph = new StringBuilder();
 
     Runtime runtime=Runtime.getRuntime();
-	// git branchtest1
+	// git branchtest
 
     public void run(int i) {
         File file=new File(runPath);
