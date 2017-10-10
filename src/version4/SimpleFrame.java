@@ -30,6 +30,7 @@ public class SimpleFrame extends JFrame {
 	int cnt,piccnt,randPath;
 	int width = 400, height = 600;
 	//String[] path;
+	//git branch
 	
 	String fName;
 	
