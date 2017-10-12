@@ -28,7 +28,6 @@ public class SimpleFrame extends JFrame {
 	JTextField textField,textField1,textField2;
 	int cnt,piccnt,randPath;
 	int width = 400, height = 600;
-	//String[] path;
 	
 	String fName;
 	
