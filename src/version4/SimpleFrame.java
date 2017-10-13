@@ -1,5 +1,6 @@
 package version4;
 
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -22,35 +23,31 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileSystemView;
 
-
-
 public class SimpleFrame extends JFrame {
 	
 	JTextField textField,textField1,textField2;
 	int cnt,piccnt,randPath;
 	int width = 400, height = 600;
-	//String[] path;
-	//git branch
 	
 	String fName;
 	
 	public SimpleFrame()
 	{
+
 		//获取分辨率
 		Toolkit kit= Toolkit.getDefaultToolkit();
 		Dimension screenSize=kit.getScreenSize();
 		int screenHeight=screenSize.height;
 		int screenWidth = screenSize.width;
 		
-		//git test3
-		// git branchtest
 		//设置框架长宽及位置
 		//add(new ImageComponent());
 		setSize(screenWidth/2,screenHeight/2);
 		setLocationByPlatform(true);
 		//setLayout(new FlowLayout());
 		
-		//添加按钮及文本框我
+
+		//添加按钮及文本框
 		JPanel northpanel=new JPanel();
 		setLayout(new BorderLayout(10,10));
 		northpanel.add(new JLabel("FileName:",SwingConstants.RIGHT));
@@ -62,7 +59,7 @@ public class SimpleFrame extends JFrame {
 		northpanel.add(certainButton);
 		
 		add(northpanel,BorderLayout.NORTH);
-		//String fileName=textField.getText().trim();
+
 		JPanel southPanel = new JPanel();
 		
 		add(southPanel,BorderLayout.SOUTH);
@@ -84,6 +81,7 @@ public class SimpleFrame extends JFrame {
 		//add(eastPanel,BorderLayout.EAST);
 		
 		//设置监听
+
 		ScanAction scanAction=new ScanAction();
 		scanButton.addActionListener(scanAction);
 		
@@ -96,6 +94,7 @@ public class SimpleFrame extends JFrame {
 				try {
 					graph.createGraph(textField.getText());
 				} catch (IOException e) {
+
 					// TODO 自动生成的 catch 块
 					e.printStackTrace();
 				}
@@ -104,6 +103,7 @@ public class SimpleFrame extends JFrame {
 				JButton rdButton = new JButton("随机游走");
 				JButton qbButton = new JButton("查询桥接词");
 				JButton gtButton = new JButton("生成新文本");
+
 				southPanel.add(showButton);
 				southPanel.add(spButton);
 				southPanel.add(rdButton);
@@ -248,7 +248,6 @@ public class SimpleFrame extends JFrame {
 					int loc;
 					public void actionPerformed(ActionEvent event)
 					{
-
 						JButton startButton= new JButton("开始");
 						JButton continueButton = new JButton("继续");
 						JButton stopButton = new JButton("结束");
@@ -316,33 +315,6 @@ public class SimpleFrame extends JFrame {
 							}
 						});
 					}
-					
-							/*public void actionPerformed(ActionEvent event) 
-							{
-								String str;
-								str=graph.randomWalk();
-								FileWriter fileWritter=null;
-								try {
-									fileWritter = new FileWriter(new File("D://temp/generatetext.txt"),false);
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-					             BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-					             try {
-									bufferWritter.write(str);
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-					             try {
-									bufferWritter.close();
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-								
-							}*/
 						});
 				graph.show();
 				graph.showDirectedGraph();
@@ -370,25 +342,3 @@ public class SimpleFrame extends JFrame {
 	}
 }
 
-
-/*
-class ImageComponent extends JPanel
-{
-	public static final int DEFAULT_WIDTH = 300;
-	public static final int DEFAULT_HEIGHT = 200;
-	
-	private Image image;
-	
-	public ImageComponent(int i)
-	{
-		image = new ImageIcon("D://temp/dotGif"+i+".gif").getImage();
-	}
-	
-	public void paintComponent(Graphics g)  //绘制组件
-	{
-		if(image==null) return;
-		g.drawImage(image, 0, 0, null);
-	}
-	
-	public Dimension getPerferredSize() { return new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT); } //组件大小？
-}*/

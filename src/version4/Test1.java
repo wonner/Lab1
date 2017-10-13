@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package version4;
+=======
+package test1;
+>>>>>>> test
 
 import java.awt.EventQueue;
 import java.io.IOException;
@@ -41,8 +45,12 @@ public class Test1 {
 		//To@explore strange ne1w worlds,
 		//To seek out new life and new civilizations
 		
+<<<<<<< HEAD
 		//git test2
 		// git branchtest
 
+=======
+		
+>>>>>>> test
 	}
 }
