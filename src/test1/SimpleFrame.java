@@ -312,32 +312,7 @@ public class SimpleFrame extends JFrame {
 						});
 					}
 					
-							/*public void actionPerformed(ActionEvent event) 
-							{
-								String str;
-								str=graph.randomWalk();
-								FileWriter fileWritter=null;
-								try {
-									fileWritter = new FileWriter(new File("D://temp/generatetext.txt"),false);
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-					             BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-					             try {
-									bufferWritter.write(str);
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-					             try {
-									bufferWritter.close();
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-								
-							}*/
+							
 						});
 				graph.show();
 				graph.showDirectedGraph();

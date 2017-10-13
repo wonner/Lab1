@@ -9,7 +9,7 @@ import java.util.Stack;
 
 
 public class Graph {
-	private int verNum;
+	private int verNum; // number of vertex
 	private ArrayList<Vertex> digraph;
 	private ArrayList<Integer> randomPath = new ArrayList<>();
 	private int lastLoc,cnt;

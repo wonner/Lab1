@@ -19,6 +19,7 @@ class  GraphViz{
 
     Runtime runtime=Runtime.getRuntime();
 
+    // i : serial number of file, help to create different file name
     public void run(int i) {
         File file=new File(runPath);
         file.mkdirs();
