@@ -37,7 +37,7 @@ public class Test1 {
 		//String s = in.nextLine();
 		//System.out.println(g.generateNewText(s));
 		
-		
+		//remote test
 		//To@explore strange ne1w worlds,
 		//To seek out new life and new civilizations
 		
