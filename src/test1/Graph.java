@@ -411,41 +411,7 @@ public class Graph {
 			System.out.println(" ");
 		}
 	}
-	/*
-	public String randomWalk()
-	{
-		Random rand = new Random();
-		int start = rand.nextInt(verNum-1);
-		int end;
-		LinkedList<Edge> eList = digraph.get(start).edgeList;
-		ArrayList<Integer> p = new ArrayList <Integer>();
-		Boolean f = false;
-		Scanner in = new Scanner(System.in);
-		
-		while( eList.size()> 0 && !f)
-		{
-			System.out.println(" ‰»Î0ºÃ–¯£¨1÷’÷π£∫");
-			String str=in.nextLine();
-			if(str.equals("0"))
-			{
-				int temp = rand.nextInt(eList.size());
-				end = eList.get(temp).edgeNode;
-				if (find(p,end,start)) f = true;
-				System.out.println(digraph.get(end).vertexNode);
-				p.add(end);
-				start = end;
-				eList = digraph.get(start).edgeList;
-			}
-			else if(str.equals("1")) { break; }	
-		}
-		
-		System.out.println("Random path:");
-		StringBuilder  sb = new StringBuilder();
-		for (int i : p) sb.append(digraph.get(i).vertexNode+" ");
-		System.out.println(sb.toString());
-		return sb.toString();
-	}
-	*/
+	
 	public void startRandomWalk()
 	{
 		randomPath.clear();

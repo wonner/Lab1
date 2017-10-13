@@ -1,6 +1,7 @@
 package test1;
 
 // GraphViz API
+// show and save digraph as .gif  
 
 import java.io.File;
 import java.io.FileOutputStream;
