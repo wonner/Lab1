@@ -15,7 +15,7 @@ public class Graph {
   /**
    * @author liudandan yangwan.
    */
-  public static int verNum;
+  public int verNum;
   /**
    * @author liudandan yangwan.
    */
@@ -28,15 +28,15 @@ public class Graph {
    * @author liudandan yangwan.
    */
 
-  public static int lastLoc;
+  public int lastLoc;
   /**
    * @author liudandan yangwan.
    */
-  public static int cnt;
+  public int cnt;
   /**
    * @author liudandan yangwan.
    */
-  public static String fname;
+  public String fname;
   /**
    * @author liudandan yangwan.
    */
