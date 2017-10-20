@@ -15,7 +15,7 @@ public class Graph {
   /**
    * @author liudandan yangwan.
    */
-  public int verNum;
+  public static int verNum;
   /**
    * @author liudandan yangwan.
    */
