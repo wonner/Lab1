@@ -241,7 +241,7 @@ public class Graph {
    */
 
   public String generateNewText(final String inputText) {
-    final String[] text = inputText.split("\\s+");
+    final String[] text = inputText.split(" ");
     final StringBuilder newText = new StringBuilder();
     
     for (int i = 0; i < text.length - 1; i++) {

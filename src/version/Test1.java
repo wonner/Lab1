@@ -32,5 +32,9 @@ public final class Test1 {
         frame.setVisible(true); // ÏÔÊ¾¿ò¼Ü
       }
     });
+    Graph g = new Graph();
+    g.createGraph("D:\\test.txt");
+    System.out.println(g.generateNewText("Seek to explore\nnew and exciting synergies"));
+    System.out.println("Seek to explore\nnew and exciting synergies");
   }
 }
