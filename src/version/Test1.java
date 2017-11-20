@@ -1,40 +1,46 @@
-package version;
+package test1;
 
 import java.awt.EventQueue;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
 import javax.swing.JFrame;
 
-/** 
-*  @author George Bush. */
+public class Test1 {
 
-public final class Test1 {
-  /**
-
-  * @throws Exception if has error(异常说明).
-
-  */
-  private Test1() {
-    
-  }
-  /**
-
-   * @throws Exception if has error(异常说明).
-
-   */
-  public static void main(final String[] args) throws IOException {
-    EventQueue.invokeLater(new Runnable() { // 时间分派线程
-      /** 
-      *  @author George Bush. */
-      
-      public void run() {
-        final SimpleFrame frame = new SimpleFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // 关闭
-        frame.setVisible(true); // 显示框架
-      }
-    });
-    Graph g = new Graph();
-    g.createGraph("D:\\test.txt");
-    System.out.println(g.generateNewText("Seek to explore\nnew and exciting synergies"));
-    System.out.println("Seek to explore\nnew and exciting synergies");
-  }
+	public static void main(String[] args)throws IOException  {
+		EventQueue.invokeLater(new Runnable(){  //时间分派线程
+			public void run()
+			{
+				SimpleFrame frame=new SimpleFrame();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  //关闭
+				frame.setVisible(true); //显示框架
+			}
+		});
+		
+		//Graph g = new Graph();
+	    //g.createGraph("D://test2.txt");
+		//g.showDirectedGraph();
+		//System.out.println(g.queryBridgeWords("strange", "worlds"));
+		//System.out.println(g.queryBridgeWords("strane", "worlds"));
+		//System.out.println(g.queryBridgeWords("new", "and"));
+		//System.out.println(g.queryBridgeWords("seek", "to"));
+	//	System.out.println(g.randomWalk());
+	//	System.out.println(g.randomWalk());
+	//	System.out.println(g.randomWalk());
+		//System.out.println(Arrays.toString(g.calcShortesePath("to", null)));
+	//	System.out.println(Arrays.toString(g.calcShortesePath("to","worlds")));
+		
+		//Scanner in = new Scanner(System.in);
+		//System.out.println("Input:");
+		//String s = in.nextLine();
+		//System.out.println(g.generateNewText(s));
+		
+		
+		//To@explore strange ne1w worlds,
+		//To seek out new life and new civilizations
+		
+		
+	}
 }

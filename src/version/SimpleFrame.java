@@ -1,4 +1,4 @@
-package version;
+package test1;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.Random;
-import java.util.logging.Logger;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -23,124 +22,77 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileSystemView;
 
-
-/**
- * @author dell.
- *
- */
-@SuppressWarnings("serial")
 public class SimpleFrame extends JFrame {
-  /** 
-  *  @author George Bush. */
-  public static final Logger log = Logger.getLogger(SimpleFrame.class.getName());
-  /**
-   *  @author George Bush.
-   */
-  public JTextField textField;
-  /**
-  *  @author George Bush.
-  */
-  public JTextField textField1; 
-  /**
-   *  @author George Bush.
-   */
-  public JTextField textField2;
-  /**
-   *  @author George Bush.
-   */
-  public int cnt;
-  /**
-   *  @author George Bush.
-   */
-  public int piccnt;
-  /**
-   *  @author George Bush.
-   */
-  public int randPath;
-  /**
-   *  @author George Bush.
-   */
-  //private static final int width = 400;
-  /**
-   *  @author George Bush.
-   */
-  //private static final int height = 600;
-  // String[] path;
-  /**
-   *  @author George Bush.
-   */
-  private String fname;
-  /** 
-  *  @author George Bush. */
-  
-  public SimpleFrame() {
-    // ªÒ»°∑÷±Ê¬ 
-    super();
-    final Toolkit kit = Toolkit.getDefaultToolkit();
-    final Dimension screenSize = kit.getScreenSize();
-    final int screenHeight = screenSize.height;
-    final int screenWidth = screenSize.width;
 
-    // git test3
-    // remote test
-    // …Ë÷√øÚº‹≥§øÌº∞Œª÷√
+  JTextField textField, textField1, textField2;
+  int cnt, piccnt, randPath;
+  int width = 400, height = 600;
+
+  String fName;
+
+  public SimpleFrame() {
+    // Ëé∑ÂèñÂàÜËæ®Áéá
+    Toolkit kit = Toolkit.getDefaultToolkit();
+    Dimension screenSize = kit.getScreenSize();
+    int screenHeight = screenSize.height;
+    int screenWidth = screenSize.width;
+
+    // ËÆæÁΩÆÊ°ÜÊû∂ÈïøÂÆΩÂèä‰ΩçÁΩÆ
     // add(new ImageComponent());
     setSize(screenWidth / 2, screenHeight / 2);
     setLocationByPlatform(true);
     // setLayout(new FlowLayout());
 
-    // ÃÌº”∞¥≈•º∞Œƒ±æøÚŒ“
-    final JPanel northpanel = new JPanel();
+    // Ê∑ªÂä†ÊåâÈíÆÂèäÊñáÊú¨Ê°ÜÊàë
+    JPanel northpanel = new JPanel();
     setLayout(new BorderLayout(10, 10));
     northpanel.add(new JLabel("FileName:", SwingConstants.RIGHT));
     textField = new JTextField(20);
     northpanel.add(textField);
-    final JButton scanButton = new JButton("‰Ø¿¿");
-    final JButton certainButton = new JButton("»∑∂®");
+    JButton scanButton = new JButton("ÊµèËßà");
+    JButton certainButton = new JButton("Á°ÆÂÆö");
     northpanel.add(scanButton);
     northpanel.add(certainButton);
 
     add(northpanel, BorderLayout.NORTH);
-    //String fileName=textField.getText().trim();
-    final JPanel southPanel = new JPanel();
+    // String fileName=textField.getText().trim();
+    JPanel southPanel = new JPanel();
 
     add(southPanel, BorderLayout.SOUTH);
 
-    final JLabel centerPanel = new JLabel();
-    final JScrollPane scollPane1 = new JScrollPane(centerPanel);
+    JLabel centerPanel = new JLabel();
+    JScrollPane scollPane1 = new JScrollPane(centerPanel);
     // centerPanel.setBounds(0,0, screenWidth/2, screenHeight);
     scollPane1.setPreferredSize(new Dimension(screenWidth / 3 * 2, screenHeight));
     add(scollPane1, BorderLayout.WEST);
 
-    final JTextArea textArea = new JTextArea(8, 40);
-    final JScrollPane scollPane = new JScrollPane(textArea);
+    JTextArea textArea = new JTextArea(8, 40);
+    JScrollPane scollPane = new JScrollPane(textArea);
     add(scollPane, BorderLayout.EAST);
 
     // add(scollPane,BorderLayout.CENTER);
     // JPanel eastPanel = new JPanel();
     // add(eastPanel,BorderLayout.EAST);
 
-    // …Ë÷√º‡Ã˝
-    final ScanAction scanAction = new ScanAction();
+    // ËÆæÁΩÆÁõëÂê¨
+    ScanAction scanAction = new ScanAction();
     scanButton.addActionListener(scanAction);
 
     certainButton.addActionListener(new ActionListener() {
-      /** 
-      *  @author George Bush. */
-      public void actionPerformed(final ActionEvent event) {
+      public void actionPerformed(ActionEvent event) {
         southPanel.removeAll();
-        final Graph graph = new Graph();
         try {
-          graph.createGraph(textField.getText());
-        } catch (IOException e) {
-          // TODO ◊‘∂Ø…˙≥…µƒ catch øÈ
-          log.fine(e.getMessage());
+          LoadCtrl.createGraph(textField.getText());
+        } catch (IOException e1) {
+          // TODO Auto-generated catch block
+          e1.printStackTrace();
         }
-        final JButton showButton = new JButton("’π æ”–œÚÕº");
-        final JButton spButton = new JButton("◊Ó∂Ã¬∑æ∂≤È—Ø");
-        final JButton rdButton = new JButton("ÀÊª˙”Œ◊ﬂ");
-        final JButton qbButton = new JButton("≤È—Ø«≈Ω”¥ ");
-        final JButton gtButton = new JButton("…˙≥…–¬Œƒ±æ");
+
+        JButton showButton = new JButton("Â±ïÁ§∫ÊúâÂêëÂõæ");
+        JButton spButton = new JButton("ÊúÄÁü≠Ë∑ØÂæÑÊü•ËØ¢");
+        JButton rdButton = new JButton("ÈöèÊú∫Ê∏∏Ëµ∞");
+        JButton qbButton = new JButton("Êü•ËØ¢Ê°•Êé•ËØç");
+        JButton gtButton = new JButton("ÁîüÊàêÊñ∞ÊñáÊú¨");
         southPanel.add(showButton);
         southPanel.add(spButton);
         southPanel.add(rdButton);
@@ -149,18 +101,14 @@ public class SimpleFrame extends JFrame {
         validate();
 
         showButton.addActionListener(new ActionListener() {
-          /** 
-          *  @author George Bush. */
-          public void actionPerformed(final ActionEvent event) {
-            centerPanel.setIcon(new ImageIcon("D://temp/" + fname + "/dotGif0.gif"));
+          public void actionPerformed(ActionEvent event) {
+            centerPanel.setIcon(new ImageIcon("D://temp/" + fName + "/dotGif0.gif"));
             validate();
           }
         });
 
         qbButton.addActionListener(new ActionListener() {
-          /** 
-          *  @author George Bush. */
-          public void actionPerformed(final ActionEvent event) {
+          public void actionPerformed(ActionEvent event) {
             northpanel.removeAll();
             northpanel.add(new JLabel("word1:", SwingConstants.CENTER));
             textField1 = new JTextField(20);
@@ -170,58 +118,52 @@ public class SimpleFrame extends JFrame {
             textField2 = new JTextField(20);
             northpanel.add(textField2);
 
-            final JButton button = new JButton("»∑∂®");
-            northpanel.add(button);
+            JButton cButton = new JButton("Á°ÆÂÆö");
+            northpanel.add(cButton);
 
             validate();
 
-            button.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
-                String word1;
-                String word2;
+            cButton.addActionListener(new ActionListener() {
+              public void actionPerformed(ActionEvent event) {
+                String word1 = null, word2 = null;
                 word1 = textField1.getText();
                 word2 = textField2.getText();
-                textArea.append(graph.queryBridgeWords(word1, word2) + "\n");
+                BridgeWordsCtrl bwCtrl = new BridgeWordsCtrl();
+                textArea.append(bwCtrl.queryBridge(word1, word2) + "\n");
+
               }
             });
           }
         });
 
         gtButton.addActionListener(new ActionListener() {
-          /** 
-          *  @author George Bush. */
-          public void actionPerformed(final ActionEvent event) {
+          public void actionPerformed(ActionEvent event) {
             northpanel.removeAll();
             northpanel.add(new JLabel("Text:", SwingConstants.CENTER));
             textField1 = new JTextField(20);
             northpanel.add(textField1);
 
-            final JButton button = new JButton("»∑∂®");
-            northpanel.add(button);
+            JButton cButton = new JButton("Á°ÆÂÆö");
+            northpanel.add(cButton);
 
             validate();
 
-            button.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
-                String word5;
-                word5 = textField1.getText();
-                textArea.append(graph.generateNewText(word5) + "\n");
+            cButton.addActionListener(new ActionListener() {
+              public void actionPerformed(ActionEvent event) {
+                String word1 = null;
+                word1 = textField1.getText();
+                BridgeWordsCtrl bwCtrl = new BridgeWordsCtrl();
+                textArea.append(bwCtrl.generateNewText(word1) + "\n");
+
               }
             });
           }
         });
 
         spButton.addActionListener(new ActionListener() {
-          /** 
-          *  @author George Bush. */
           private String[] path;
-          /** 
-          *  @author George Bush. */
-          public void actionPerformed(final ActionEvent event) {
+
+          public void actionPerformed(ActionEvent event) {
 
             northpanel.removeAll();
             northpanel.add(new JLabel("word1:", SwingConstants.CENTER));
@@ -232,29 +174,27 @@ public class SimpleFrame extends JFrame {
             textField2 = new JTextField(20);
             northpanel.add(textField2);
 
-            final JButton button = new JButton("»∑∂®");
-            northpanel.add(button);
+            JButton cButton = new JButton("Á°ÆÂÆö");
+            northpanel.add(cButton);
 
-            final JButton nextButton = new JButton("œ¬“ªÃı");
+            JButton nextButton = new JButton("‰∏ã‰∏ÄÊù°");
             northpanel.add(nextButton);
 
             validate();
-            button.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
-                String word3;
-                String word4;
-                word3 = textField1.getText();
-                word4 = textField2.getText();
+            cButton.addActionListener(new ActionListener() {
 
-                path = graph.calcShortesePath(word3, word4);
-                final String str1 = path[0].split(" ")[0];
-                final boolean aaaa = path.length == 1 && "No".equals(str1);
-                if (aaaa) {
-                  textArea.append("0Ãı¬∑æ∂\n");
+              public void actionPerformed(ActionEvent event) {
+                String word1 = null, word2 = null;
+                word1 = textField1.getText();
+                word2 = textField2.getText();
+
+                SPCtrl spctrl = new SPCtrl();
+                path = spctrl.calcShortesePath(word1, word2);
+
+                if (path.length == 1 && path[0].split(" ")[0].equals("No")) {
+                  textArea.append("0Êù°Ë∑ØÂæÑ\n");
                 } else {
-                  textArea.append(path.length + "Ãı¬∑æ∂\n");
+                  textArea.append(path.length + "Êù°Ë∑ØÂæÑ\n");
                 }
                 cnt = 0;
                 piccnt = 0;
@@ -262,23 +202,19 @@ public class SimpleFrame extends JFrame {
               }
             });
             nextButton.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
+
+              public void actionPerformed(ActionEvent event) {
                 if (cnt < path.length) {
-                  final String str2 = path[cnt];
-                  final String str3 = str2.split(" ")[0];
-                  if ("No".equals(str3)) {
-                    textArea.append("µ⁄" + (cnt + 1) + "Ãı:" + path[cnt] + "\n");
+                  if (path[cnt].split(" ")[0].equals("No")) {
+                    textArea.append("Á¨¨" + (cnt + 1) + "Êù°:" + path[cnt] + "\n");
                   } else {
-                    textArea.append("µ⁄" + (cnt + 1) + "Ãı:" + path[cnt] + "\n");
+                    textArea.append("Á¨¨" + (cnt + 1) + "Êù°:" + path[cnt] + "\n");
                     try {
                       centerPanel.setIcon(new ImageIcon(
-                          ImageIO.read(new File("D://temp/" + fname 
-                          + "/sPath/dotGif" + (piccnt + 1) + ".gif"))));
+                          ImageIO.read(new File("D://temp/" + fName + "/sPath/dotGif" + (piccnt + 1) + ".gif"))));
                     } catch (IOException e) {
                       // TODO Auto-generated catch block
-                      log.fine(e.getMessage());
+                      e.printStackTrace();
                     }
                     validate();
                     piccnt++;
@@ -291,20 +227,15 @@ public class SimpleFrame extends JFrame {
 
           }
         });
+        RandomWalkCtrl rwCtrl = new RandomWalkCtrl();
         rdButton.addActionListener(new ActionListener() {
-          /** 
-          *  @author George Bush. */
           int loc;
-          /** 
-          *  @author George Bush. */
-          int loc2;
-          /** 
-          *  @author George Bush. */
-          public void actionPerformed(final ActionEvent event) {
 
-            final JButton startButton = new JButton("ø™ º");
-            final JButton continueButton = new JButton("ºÃ–¯");
-            final JButton stopButton = new JButton("Ω· ¯");
+          public void actionPerformed(ActionEvent event) {
+
+            JButton startButton = new JButton("ÂºÄÂßã");
+            JButton continueButton = new JButton("ÁªßÁª≠");
+            JButton stopButton = new JButton("ÁªìÊùü");
 
             southPanel.add(startButton);
             southPanel.add(continueButton);
@@ -313,57 +244,54 @@ public class SimpleFrame extends JFrame {
             validate();
 
             startButton.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
-                graph.startRandomWalk();
-                loc = graph.randomWalk(-1);
+              public void actionPerformed(ActionEvent event) {
+
+                rwCtrl.startRandomWalk();
+                loc = rwCtrl.randomWalk(-1);
                 randPath = 1;
 
               }
             });
 
             continueButton.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
-                final Random rand = new Random();
-                loc2 = graph.randomWalk(rand.nextInt(loc));
-                if (loc2 == -1) {
+              public void actionPerformed(ActionEvent event) {
+                Random rand = new Random();
+                loc = rwCtrl.randomWalk(rand.nextInt(loc));
+
+                if (loc == -1) {
                   southPanel.remove(continueButton);
-                  textArea.append(graph.getRandPath() + "\n");
+
+                  textArea.append(rwCtrl.getRandPath() + "\n");
                   textArea.append("finish!");
                   return;
                 }
-                //log.fine("D://temp/" + fname + "/rPath\\dotGif");
+                System.out.println("D://temp/" + fName + "/rPath\\dotGif");
                 try {
                   Thread.sleep(1000);
                 } catch (InterruptedException e) {
                   // TODO Auto-generated catch block
-                  log.fine(e.getMessage());
+                  e.printStackTrace();
                 }
                 try {
                   centerPanel.setIcon(
-                      new ImageIcon(ImageIO.read(
-                      new File("D://temp/" + fname + "/rPath/dotGif" + randPath + ".gif"))));
+                      new ImageIcon(ImageIO.read(new File("D://temp/" + fName + "/rPath/dotGif" + randPath + ".gif"))));
                 } catch (IOException e) {
                   // TODO Auto-generated catch block
-                  log.fine(e.getMessage());
+                  e.printStackTrace();
                 }
                 // centerPanel.setIcon(new
-                // ImageIcon("D://temp/"+fname+"/rPath/dotGif"+randPath+".gif"));
-                //log.(randPath);
+                // ImageIcon("D://temp/"+fName+"/rPath/dotGif"+randPath+".gif"));
+                System.out.println(randPath);
                 validate();
-                textArea.append(graph.getRandPath() + "\n");
-                //System.out.println(randPath);
+
+                textArea.append(rwCtrl.getRandPath() + "\n");
+                System.out.println(randPath);
                 randPath++;
               }
             });
 
             stopButton.addActionListener(new ActionListener() {
-              /** 
-              *  @author George Bush. */
-              public void actionPerformed(final ActionEvent event) {
+              public void actionPerformed(ActionEvent event) {
                 southPanel.remove(startButton);
                 southPanel.remove(continueButton);
                 southPanel.remove(stopButton);
@@ -371,41 +299,30 @@ public class SimpleFrame extends JFrame {
               }
             });
           }
+
         });
-        graph.show();
-        graph.showDirectedGraph();
+        ShowCtrl sc = new ShowCtrl();
+        sc.show();
+
       }
     });
 
   }
-  /** 
-  *  @author George Bush. */
-  
+
   private class ScanAction implements ActionListener {
-    /** 
-    *  @author George Bush. */
-    private final JFileChooser chooser = new JFileChooser();
-    /** 
-    *  @author George Bush. */
-    
-    public ScanAction() {
-      log.fine("ππ‘Ï∫Ø ˝");
-    }
-    /** 
-    *  @author George Bush. */
-    
-    public void actionPerformed(final ActionEvent event) {
-      final FileSystemView fsv = FileSystemView.getFileSystemView();
+    private JFileChooser chooser = new JFileChooser();
+
+    public void actionPerformed(ActionEvent event) {
+      FileSystemView fsv = FileSystemView.getFileSystemView();
       chooser.setCurrentDirectory(fsv.getHomeDirectory());
-      final int result = chooser.showOpenDialog(SimpleFrame.this);
+      int result = chooser.showOpenDialog(SimpleFrame.this);
       if (result == JFileChooser.APPROVE_OPTION) {
-        final File fil = chooser.getSelectedFile();
-        final String name = fil.getPath();
-        final String namenew = name.replaceAll("\\\\", "/");
-        textField.setText(namenew);
-        fname = namenew.substring(namenew.lastIndexOf('/') + 1, namenew.lastIndexOf('.'));
+        String name = chooser.getSelectedFile().getPath();
+        name = name.replaceAll("\\\\", "/");
+        textField.setText(name);
+        fName = name.substring(name.lastIndexOf("/") + 1, name.lastIndexOf("."));
+        ;
       }
     }
   }
 }
-
