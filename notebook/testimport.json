@@ -1,0 +1,39 @@
+{
+	"name": "testimport",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2
+		},
+		"metadata": {
+			"saveOutput": true,
+			"kernelspec": {
+				"name": null,
+				"display_name": null
+			},
+			"language_info": {
+				"name": "python"
+			},
+			"a365ComputeOptions": {
+				"id": "/subscriptions/051ddeca-1ed6-4d8b-ba6f-1ff561e5f3b3/resourceGroups/ywtest/providers/Microsoft.Synapse/workspaces/ywtestworkspace/bigDataPools/ywtestsparkpool",
+				"name": "ywtestsparkpool",
+				"type": "Spark",
+				"endpoint": "https://ywtestworkspace.dev.azuresynapse.net/livyApi/versions/2019-11-01-preview/sparkPools/ywtestsparkpool",
+				"auth": {
+					"type": "AAD",
+					"authResource": "https://dev.azuresynapse.net"
+				},
+				"sparkVersion": "2.4",
+				"nodeCount": 3,
+				"cores": 4,
+				"memory": 28
+			}
+		},
+		"cells": []
+	}
+}

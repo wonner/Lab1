@@ -1,0 +1,27 @@
+{
+	"name": "test",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Pipeline 1",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"end": "@trigger().scheduledTime"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 60,
+				"startTime": "2021-08-26T08:00:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

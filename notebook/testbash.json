@@ -1,0 +1,26 @@
+{
+	"name": "testbash",
+	"properties": {
+		"folder": {
+			"name": "testbash"
+		},
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"metadata": {
+			"saveOutput": true,
+			"language_info": {
+				"name": "python"
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"print('hello')"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}
