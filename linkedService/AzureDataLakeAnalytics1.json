@@ -1,0 +1,20 @@
+{
+	"name": "AzureDataLakeAnalytics1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDataLakeAnalytics",
+		"typeProperties": {
+			"accountName": "a",
+			"servicePrincipalId": "e3688378-4440-43dc-9c10-8b8250fbd549",
+			"tenant": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+			"subscriptionId": "a",
+			"resourceGroupName": "a",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIllXVEVTVFdPUktTUEFDRV9hOWVmOWJlMy1lYjZmLTQxNmEtYjNlZC02MGUzNGEyOTg2M2MiDQp9"
+		},
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
