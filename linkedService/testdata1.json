@@ -1,0 +1,16 @@
+{
+	"name": "testdata1",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"type": "AzureDataExplorer",
+		"connectVia": {
+			"referenceName": "AutoResolveIntegrationRuntime",
+			"type": "IntegrationRuntimeReference"
+		},
+		"annotations": [],
+		"typeProperties": {
+			"endpoint": "https://azurecogsvc.eastus2.kusto.windows.net/",
+			"database": "Spend"
+		}
+	}
+}
